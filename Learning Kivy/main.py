@@ -62,14 +62,10 @@ class PongGame(Widget):
             self.serve_ball(vel = (-4,0))
         
         def on_touch_move(self, touch):
-            if touch.x < self.width/3:
+            if touch.x < self.width / 1 / 4:
                 self.player1.center_y = touch.y
-            
-            if touch.x > self.width - self.width/3:
+            if touch.x > self.width * 3 / 4:
                 self.player2.center_y = touch.y
-        
-    pass
-
 
 class PongApp(App):
     def build(self):
@@ -79,5 +75,4 @@ class PongApp(App):
         return game
 
 
-if __name__ == '__main__':
-    PongApp().run()
+PongApp().run()
